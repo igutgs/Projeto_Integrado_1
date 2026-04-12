@@ -119,7 +119,7 @@ body {
 .centro {
     width: 100%;
     height: 100vh; 
-     background-image:  url('images/treino.jpg.jpeg');  
+     background-image:  url('../images/treino.jpg.jpeg');  
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -151,6 +151,14 @@ body {
     text-align: center;
 }
 
+.section h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--color-primary);
+    margin: 15px auto;
+}
 
 /* =========================================
    CARDS

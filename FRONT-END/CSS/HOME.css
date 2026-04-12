@@ -121,7 +121,7 @@ body {
     height: 100vh; 
     background-color: #000; 
     background-image: linear-gradient(rgba(0,0,0,0.7), rgba(34,0,0,0.5)), 
-                      url('images/home.png'); 
+                      url('../images/home.png'); 
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

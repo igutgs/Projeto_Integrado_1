@@ -1,13 +1,19 @@
-:root {
-    --color-primary: #ff0000;   
-    --color-secondary: #ae0000; 
-    --color-tertiary: #630000;   
-    --color-dark: #220000;     
-    --color-black: #000000;     
+/* =========================================
+   VARIÁVEIS DE CORES
+   ========================================= */
+   :root {
+    --color-primary: #ff0000;    /* Vermelho vibrante (Destaques) */
+    --color-secondary: #ae0000;  /* Vermelho médio (Hover/Botões) */
+    --color-tertiary: #630000;   /* Vermelho escuro */
+    --color-dark: #220000;       /* Vinho profundo (Seções) */
+    --color-black: #000000;      /* Preto puro (Fundo principal) */
     --color-white: #ffffff;
     --color-gray: #bbbbbb;
 }
 
+/* =========================================
+   RESET E BASE
+   ========================================= */
 * {
     margin: 0;
     padding: 0;
@@ -32,6 +38,9 @@ body {
     padding: 0 20px;
 }
 
+/* =========================================
+   HEADER (MENU)
+   ========================================= */
 .header {
     background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
     padding: 30px 0;
@@ -102,12 +111,14 @@ body {
     color: var(--color-white);
 }
 
+/* =========================================
+   HERO SECTION
+   ========================================= */
 .centro {
     width: 100%;
     height: 100vh; 
     background-color: #000; 
-    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(34,0,0,0.5)), 
-                      url('images/home.png'); 
+    background-image:  url('../images/planos.png'); 
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -118,33 +129,41 @@ body {
     text-align: center;
     position: relative; 
 }
-.centroText h2 {
-    font-size: clamp(2.5rem, 8vw, 4.5rem);
+
+.btn {
+    background: var(--color-primary);
+    border: none;
+    color: var(--color-white);
+    padding: 18px 45px;
     text-transform: uppercase;
-    margin-bottom: 20px;
-    letter-spacing: 3px;
-    font-weight: 700;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.4s;
+    box-shadow: 0 5px 20px rgba(255, 0, 0, 0.4);
+    margin-top: 5px;
+    margin-top: 5px;
+  
 }
 
-.centroText p {
-    font-size: 1.2rem;
-    margin-bottom: 40px;
-    max-width: 700px;
-    margin-inline: auto;
-    color: var(--color-gray);
+.btn:hover {
+    background: var(--color-secondary);
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(255, 0, 0, 0.6);
 }
 
+/* =========================================
+   SEÇÕES GERAIS
+   ========================================= */
 .section {
     padding: 120px 0;
-    text-align: left;
+    text-align: center;
 }
 
 .section h2 {
     text-transform: uppercase;
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     margin-bottom: 40px;
-    letter-spacing: 3px;
-    font-weight: 700;
+    letter-spacing: 2px;
 }
 
 .section h2::after {
@@ -156,6 +175,9 @@ body {
     margin: 15px auto;
 }
 
+/* =========================================
+   CARDS
+   ========================================= */
 .dark-grey {
     background-color: var(--color-dark); 
 }
@@ -165,27 +187,23 @@ body {
     justify-content: center;
     gap: 30px; 
     flex-wrap: wrap;
-    align-items: stretch;
 }
 
 .card-simple {
     background: #111111;
     padding: 0; 
-    width: 280px;
+    width: 400px;
+    height: 600px;
     border: none; 
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    position: relative;
-    transition: all .4s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    height: auto;
-    min-height: 550px;
-
 }
 
+.card-simple:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(255, 0, 0, 0.15);
+}
 
 .card-simple img {
     width: 100%;
@@ -209,66 +227,10 @@ body {
     font-size: 0.9rem;
 }
 
-.sectionTextura {
-    background-color: var(--color-black);
-    background-image: url('images/carbon-fibre.png');
-}
 
-.card-hover {
-    position: relative;
-    width: 330px;
-    height: 450px;
-    overflow: hidden;
-    border: none; 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    transform: translateY(-10px);
-}
-
-.card-hover img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s ease;
-}
-
-.card-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.85);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 30px;
-    opacity: 0;
-    transition: 0.4s ease;
-}
-
-.card-hover:hover img {
-    transform: scale(1.1);
-}
-
-.card-hover:hover .card-overlay {
-    opacity: 1;
-}
-
-.card-overlay h3 {
-    color: var(--color-primary);
-    text-transform: uppercase;
-    margin-bottom: 15px;
-    font-size: 1.5rem;
-    border-bottom: 2px solid var(--color-primary);
-    padding-bottom: 5px;
-}
-
-.card-overlay p {
-    text-align: center;
-    color: var(--color-white);
-}
-
+/* =========================================
+   FOOTER E ÍCONES
+   ========================================= */
 .footer {
     background-color: var(--color-black); 
     padding: 80px 0;
@@ -311,136 +273,3 @@ body {
     text-align: justify;
 }
 
-.SaibaMaisLink {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 20px;
-}
-
-.view-more {
-    color: var(--color-primary);
-    text-decoration: none;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    transition: 0.3s;
-}
-
-.view-more:hover {
-    color: var(--color-white);
-    padding-right: 5px;
-}
-
-.lista-premium {
-    list-style: none; 
-    padding: 0;
-    margin: 20px 0;
-    text-align: justify; 
-}
-
-.lista-premium li {
-    margin-bottom: 12px; 
-    color: #ccc; 
-    display: flex;
-    align-items: center;
-}
-
-.lista-premium span {
-    color: #2ecc71; 
-    margin-right: 10px; 
-    font-weight: bold;
-    filter: drop-shadow(0 0 2px #2ecc71); 
-}
-.btn {
-    display: block;    
-    width: 210px;             
-    height: 45px;             
-    line-height: 45px;        
-    text-align: center;   
-    margin-top: auto;    
-    margin-bottom: 20px;
-    align-self: center;
-    background-color: #ae0000;
-    color: white;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-decoration: none;    
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: 0.4s;
-    padding: 0;               
-}
-
-.card-simple h3 {
-    display: block;
-font-size: 1.6rem;
-width: 100%;
-margin-bottom: 20px;
-text-align: center;
-color:#ffffff;
-}
-
-.card-simple p {
-font-size: 0.95rem;
-color: var(--color-gray);
-margin: 0 20px 10px;
-text-align: left;
-
-}
-.card-simple strong {
-    display: block;
-    text-align: center;
-    margin: 15px 0;
-    color: #eeeeee; 
-    font-weight: 600; 
-    font-size: 1.4rem;
-}
-
-.card-simple strong span {
-    font-size: 1.4rem;   
-    font-weight: 600; 
-    vertical-align: middle;
-    margin: 0 5px;
-    text-shadow: 2px 4px 15px rgba(0, 0, 0, 0.5); 
-}
-
-.card-simple strong small {
-    font-size: 1rem;
-    color: #888;
-    font-weight: 400;
-}
-.container h2 {
-text-align: center;
-width: 100%;
-margin-bottom: 40px;
-
-}
-
-.card-simple:hover .btn {
-    background-color: #ff6666;
-    transform: scale(1.05); 
-}
-
-
-.cards:hover .card-simple {
-    opacity: 0.15;       
-    transform: scale(0.9); 
-    filter: grayscale(100%) blur(2px); 
-    transition: all 0.4s ease; 
-}
-
-
-.cards .card-simple:hover {
-    opacity: 1;           
-    filter: grayscale(0%) blur(0); 
-    transform: translateY(-45px) scale(1.1) !important; 
-    box-shadow: 0 30px 60px rgba(255, 0, 0, 0.6) !important; 
-    z-index: 999;           
-}
-
-.container:has(.card-simple:hover) h2 {
-    opacity: 0.15;
-    filter: blur(2px);
-    transition: all 0.4s ease;
-}
