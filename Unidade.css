@@ -1,0 +1,249 @@
+
+
+/* =========================================
+   VARIÁVEIS DE CORES
+   ========================================= */
+:root {
+    --color-primary: #ff0000;    /* Vermelho vibrante (Destaques) */
+    --color-secondary: #ae0000;  /* Vermelho médio (Hover/Botões) */
+    --color-tertiary: #630000;   /* Vermelho escuro */
+    --color-dark: #220000;       /* Vinho profundo (Seções) */
+    --color-black: #000000;      /* Preto puro (Fundo principal) */
+    --color-white: #ffffff;
+    --color-gray: #bbbbbb;
+}
+
+/* =========================================
+   RESET E BASE
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-white);
+    background-color: var(--color-black);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.container h1{
+    align-items: center;
+    padding-bottom: 5%;
+    padding-top: 5%;
+}
+
+
+/* =========================================
+   HEADER (MENU)
+   ========================================= */
+.header {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
+    padding: 30px 0;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.4s ease;
+}
+
+.header.sticky {
+    position: fixed;
+    background: var(--color-black);
+    padding: 15px 0;
+    box-shadow: 0 2px 15px rgba(255, 0, 0, 0.2);
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 80px; 
+    width: auto;  
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05); 
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    align-items: center;
+}
+
+.menu a {
+    color: var(--color-white);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: var(--color-primary);
+}
+
+.menu a.highlight {
+    border: 2px solid var(--color-primary);
+    padding: 8px 20px;
+    transition: 0.4s;
+}
+
+.menu a.highlight:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+
+/* =========================================
+   SEÇÕES GERAIS
+   ========================================= */
+.section {
+    padding: 120px 0;
+    text-align: center;
+}
+
+.section h2 {
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    letter-spacing: 2px;
+}
+
+.section h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--color-primary);
+    margin: 15px auto;
+}
+
+/* =========================================
+   CARDS
+   ========================================= */
+.dark-grey {
+    background-color: var(--color-dark); 
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px; 
+    flex-wrap: wrap;
+}
+
+.card-simple {
+    background: #111111;
+    padding: 0; 
+    width: 350px;
+    border: none; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.card-simple:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(255, 0, 0, 0.15);
+}
+
+.card-simple img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.unit-info {
+    padding: 25px 20px;
+    text-align: left;
+}
+.unit-info h2 {
+    color: var(--color-white);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    align-items: center;
+}
+.unit-info h3 {
+    color: var(--color-primary);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.unit-info p {
+    color: var(--color-gray);
+    font-size: 0.9rem;
+    align-items: center;
+}
+
+/* =========================================
+   FOOTER E ÍCONES
+   ========================================= */
+.footer {
+    background-color: var(--color-black); 
+    padding: 80px 0;
+    border-top: 1px solid var(--color-dark);
+}
+
+.footer-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.footerContatos h3 {
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    color: var(--color-primary);
+}
+
+.contatosIcons {
+    display: flex;
+    gap: 20px;
+}
+
+.contatosIcons a {
+    color: var(--color-white);
+    font-size: 1.8rem;
+    transition: 0.3s ease;
+}
+
+.contatosIcons a:hover {
+    color: var(--color-primary);
+    transform: translateY(-5px);
+}
+
+.footerText p {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: var(--color-gray);
+    text-align: justify;
+}

@@ -1,0 +1,361 @@
+
+
+/* =========================================
+   VARIÁVEIS DE CORES
+   ========================================= */
+:root {
+    --color-primary: #ff0000;    /* Vermelho vibrante (Destaques) */
+    --color-secondary: #ae0000;  /* Vermelho médio (Hover/Botões) */
+    --color-tertiary: #630000;   /* Vermelho escuro */
+    --color-dark: #220000;       /* Vinho profundo (Seções) */
+    --color-black: #000000;      /* Preto puro (Fundo principal) */
+    --color-white: #ffffff;
+    --color-gray: #bbbbbb;
+}
+
+/* =========================================
+   RESET E BASE
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-white);
+    background-color: var(--color-black);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* =========================================
+   HEADER (MENU)
+   ========================================= */
+   .header {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
+    padding: 30px 0;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.4s ease;
+}
+
+.header.sticky {
+    position: fixed;
+    background: var(--color-black);
+    padding: 15px 0;
+    box-shadow: 0 2px 15px rgba(255, 0, 0, 0.2);
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 80px; 
+    width: auto;  
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05); 
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    align-items: center;
+}
+
+.menu a {
+    color: var(--color-white);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: var(--color-primary);
+}
+
+.menu a.highlight {
+    border: 2px solid var(--color-primary);
+    padding: 8px 20px;
+    transition: 0.4s;
+}
+
+.menu a.highlight:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+/* =========================================
+   HERO SECTION
+   ========================================= */
+.centro {
+    width: 100%;
+    height: 100vh; 
+     background-image:  url('images/treino.jpg.jpeg');  
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative; 
+};
+
+
+
+
+/* =========================================
+   SEÇÕES GERAIS
+   ========================================= */
+.section {
+    padding: 120px 0;
+    text-align: center;
+}
+
+.section h2 {
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    letter-spacing: 2px;
+    padding-top: 40px;
+    text-align: center;
+}
+
+
+/* =========================================
+   CARDS
+   ========================================= */
+.dark-grey {
+    background-color: var(--color-dark); 
+    min-height: 100vh;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.card {
+    width:  300px;
+    height: 620px;
+    background-color:var(--color-black);
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    display: block;
+}
+
+.card-tittle {
+    background-color: var(--color-secondary) ;
+    padding: 30px 10px;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.card-tittle h3 {
+    color: var(--color-white);
+    font-size: 1.7rem;
+  
+}
+
+.card-icones { 
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 15px;
+    transform: translateY(100px);
+    transition: 0.4s;
+}
+
+.card-item {
+    text-align: center;
+    flex: 1;
+}
+
+.card-item i {
+    font-size: 22px;
+    margin-bottom: 2px;         
+    color: var(--color-white);
+}
+
+.card-item p {
+    font-size: 0.8rem;
+    margin: 2px 0;
+    color: var(--color-white);
+}
+
+.card-item span {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color : var(--color-white);
+    margin-top: 0.5px;
+}
+
+.card-extra {
+    padding: 5px 20px 20px;
+    text-align: left;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 0.5s;
+}
+
+.card-extra p {
+    font-size: 0.9rem;
+    color: var(--color-white);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.saiba-mais {
+    color: var(--color-white);
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 2px solid var(--color-primary);
+    margin-top: auto;
+    display: block;
+    width: fit-content;
+}
+
+.card:hover .card-tittle {
+    padding: 10px;
+}
+
+.card:hover .card-icones {
+    transform: translateY(0);
+}
+
+.card:hover .card-extra {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================
+   FOOTER E ÍCONES
+   ========================================= */
+.footer {
+    background-color: var(--color-black); 
+    padding: 80px 0;
+    border-top: 1px solid var(--color-dark);
+}
+
+.footer-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.footerContatos h3 {
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    color: var(--color-primary);
+}
+
+.contatosIcons {
+    display: flex;
+    gap: 20px;
+}
+
+.contatosIcons a {
+    color: var(--color-white);
+    font-size: 1.8rem;
+    transition: 0.3s ease;
+}
+
+.contatosIcons a:hover {
+    color: var(--color-primary);
+    transform: translateY(-5px);
+}
+
+.footerText p {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: var(--color-gray);
+    text-align: justify;
+}
+
+/* =========================================
+   AUXILIARES
+   ========================================= */
+.SaibaMaisLink {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.view-more {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    transition: 0.3s;
+}
+
+.view-more:hover {
+    color: var(--color-white);
+    padding-right: 5px;
+}
+
+/* =========================================
+   AUXILIARES
+   ========================================= */
+.VejaMaisLink {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 60px;
+}
+
+.view-more {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    transition: 0.3s;
+    margin-bottom: 60px;
+}
+
+.view-more:hover {
+    color: var(--color-white);
+    padding-right: 5px;
+}
