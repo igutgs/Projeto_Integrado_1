@@ -238,7 +238,7 @@ body {
     border-top: 1px solid var(--color-dark);
 }
 
-.footer-grid {
+.footerGrid {
     display: flex;
     flex-direction: column;
     gap: 40px;
