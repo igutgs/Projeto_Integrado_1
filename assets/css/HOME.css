@@ -69,13 +69,15 @@ body {
     display: flex;
     align-items: center;
     text-decoration: none;
+   
 }
 
 .logo-img {
-    height: 80px; 
+    height: 70px; 
     width: auto;  
     display: block;
     transition: transform 0.3s ease;
+    margin-left: -20px;
 }
 
 .logo-img:hover {
@@ -265,7 +267,7 @@ body {
     transition: transform 0.6s ease;
 }
 
-.card-overlay {
+.CardOverlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -285,11 +287,11 @@ body {
     transform: scale(1.1);
 }
 
-.card-hover:hover .card-overlay {
+.card-hover:hover .CardOverlay {
     opacity: 1;
 }
 
-.card-overlay h3 {
+.CardOverlay h3 {
     color: var(--color-primary);
     text-transform: uppercase;
     margin-bottom: 15px;
@@ -298,7 +300,7 @@ body {
     padding-bottom: 5px;
 }
 
-.card-overlay p {
+.CardOverlay p {
     text-align: center;
     color: var(--color-white);
 }
@@ -312,7 +314,7 @@ body {
     border-top: 1px solid var(--color-dark);
 }
 
-.footer-grid {
+.footerGrid {
     display: flex;
     flex-direction: column;
     gap: 40px;
