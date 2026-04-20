@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="academia, fitness, musculação, treino">
     <meta name="author" content="Sua Academia">
-    <title>Login</title>
+    <title>Esqueceu Senha</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-    <link rel="stylesheet" href="../assets/css/LOGIN.css">
+    <link rel="stylesheet" href="../assets/css/ESQUECEUSENHA.css">
 </head>
 
 <body>
@@ -33,26 +33,28 @@
     </header>
 
 
-    <section class="HeroLogin">
+    <section class="HeroEsqueceuSenha">
         <div class="container">
             <div class="forms">
-                <form action="/login" method="POST">
-                    <h2>ENTRAR</h2>
+                <form action="/esqueceusenha" method="POST">
+                    <h2>ALTERAR SENHA</h2>
                     <div>
                         <label for="usuario">CPF OU E-MAIL</label>
                         <input type="text" id="usuario" name="usuario" placeholder="000.000.000-00 ou email@exemplo.com" required>
                     </div>
                     <div>
                         <label for="senha">SENHA</label>
-                        <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+                        <input type="password" id="senha" name="senha" placeholder="Digite sua senha nova" required>
                     </div>
-                    <button type="submit">ACESSAR CONTA</button>
+                    <div>
+                        <label for="senha">SENHA</label>
+                        <input type="password" id="senha" name="senha" placeholder="Confirme sua senha nova" required>
+                    </div>
+                    <button type="submit">TROCAR SENHA</button>
                     <div class="Link">
                         <a href="CADASTRO.html">Não possui uma conta? Cadastre-se aqui</a>
                     </div>
-                    <div class="Link">
-                        <a href="ESQUECEUSENHA.html">Esqueceu a senha?</a>
-                    </div>
+                    
                 </form>
             </div>
         </div>

@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="academia, fitness, musculação, treino">
     <meta name="author" content="Sua Academia">
-    <title>Login</title>
+    <title>Esqueceu Senha</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-    <link rel="stylesheet" href="../assets/css/LOGIN.css">
+    <link rel="stylesheet" href="../assets/css/CONTATO.css">
 </head>
 
 <body>
@@ -33,28 +33,59 @@
     </header>
 
 
-    <section class="HeroLogin">
-        <div class="container">
-            <div class="forms">
-                <form action="/login" method="POST">
-                    <h2>ENTRAR</h2>
-                    <div>
-                        <label for="usuario">CPF OU E-MAIL</label>
-                        <input type="text" id="usuario" name="usuario" placeholder="000.000.000-00 ou email@exemplo.com" required>
-                    </div>
-                    <div>
-                        <label for="senha">SENHA</label>
-                        <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
-                    </div>
-                    <button type="submit">ACESSAR CONTA</button>
-                    <div class="Link">
-                        <a href="CADASTRO.html">Não possui uma conta? Cadastre-se aqui</a>
-                    </div>
-                    <div class="Link">
-                        <a href="ESQUECEUSENHA.html">Esqueceu a senha?</a>
-                    </div>
-                </form>
+    <section class="ContatosSection">
+        <div class="container ContatosGrid">
+            
+            <div class="ColumnLeft">
+                <h2>Qualquer dúvida</h2>
+                <div class="CardForm">
+                    <form action="#">
+                        <div class="InputBox">
+                            <label>Nome do solicitante *</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="InputBox">
+                            <label>Email do solicitante *</label>
+                            <input type="email" required>
+                        </div>
+                       
+                        <div class="InputBox">
+                            <label>CPF</label>
+                            <input type="text">
+                        </div>
+                        <div class="InputBox">
+                            <label>Unidade</label>
+                            <input type="text">
+                        </div>
+                       
+                        <div class="InputBox">
+                            <label>Escreva sua solicitação *</label>
+                            <textarea rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar</button>
+                    </form>
+                </div>
             </div>
+
+            <div class="ColumnRight">
+                <div class="CardPlaylist">
+                    <h3>Sujestão de novas músicas para a playlist da academia</h3>
+                    <form action="#">
+                        <div class="PlaylistField">
+                            <label>Música:</label>
+                            <input type="text">
+                        </div>
+                        <div class="PlaylistField">
+                            <label>Unidade:</label>
+                            <input type="text">
+                        </div>
+                        <div class="btn-container-right">
+                            <button type="submit" class="btn">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
         </div>
     </section>
 
