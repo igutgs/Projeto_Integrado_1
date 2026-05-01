@@ -10,6 +10,8 @@ Menor que 16: Magreza grave
 35 a 39,9: Obesidade grau II (severa)
 Maior que 40: Obesidade grau III (mórbida)
 */
+const conectar = require('../database/db');
+
 
 function calcularIMC(altura, peso) {
     if (altura <= 0 || peso <= 0) {
@@ -53,6 +55,29 @@ function classificaIMC(imc) {
     }
 }
 
-let imc = calcularIMC(1.65, 60);
-console.log("IMC: " + imc.toFixed(2));
-console.log("Classificação: " + classificaIMC(imc));
+async function calcularIMCdoBanco(idAluno) {
+    //abre conexão
+    const con = await conectar(); 
+
+    //busca dados
+    const result = await con.execute(
+        `SELECT altura, peso FROM Aluno WHERE idAluno = :id`,
+        [idAluno]
+    );
+
+    //pega os dados
+    const altura = result.rows[0][0];
+    const peso = result.rows[0][1];
+
+    //fecha conexão
+    await con.close();
+
+    return {
+        altura,
+        peso,
+        imc: calcularIMC(altura, peso).toFixed(2)
+    };
+}
+
+
+calcularIMCdoBanco(1);

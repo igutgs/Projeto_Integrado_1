@@ -16,8 +16,10 @@ CREATE TABLE Aluno (
     numero VARCHAR2(10),
     complemento VARCHAR2(50),
     nivelTreino VARCHAR2(50),
-    qtdTreino NUMBER
+    qtdTreino NUMBER,
 
+    altura NUMBER(5,2),
+    peso NUMBER(5,2),
     -- Senha para Login
     senha VARCHAR2(100)
 );
@@ -50,17 +52,7 @@ CREATE TABLE treino(
     nome VARCHAR2(100)
 
 );
--- tabela qtd de series, rep e descanso
--- tabela de ficha do aluno
--- inserts 
--- peito 
--- costas
--- pernas 
--- ombros
--- biceps
--- gluteo
--- triceps
--- selects ex select * from ex WHWERE gripoMusc = "peito"
--- criar treino ex insert into treino values(1, 'treino a')
 
--- ligar ex ao treino insert into te values (1, 1, 3, 12, '60s')
+INSERT INTO Aluno
+(nome, dataNas, cpf, rg, telefone, email, cep, logradouro, numero, complemento, nivelTreino, qtdTreino, altura, peso, senha)
+values('Fulana', to_date('2004-06-15', 'YYYY-MM-DD'), '123.456.789-00', '1234567', '11999999999', 'funala@gmmail.com', '00000-000', 'Rua Floral', '123', 'Casa','N2', 5, 1.65, 55, 'senha123');
