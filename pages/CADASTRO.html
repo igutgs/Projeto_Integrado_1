@@ -37,7 +37,7 @@
 
     <section class="HeroCadastro">
         <div class="FormsCadastro">
-            <form action="/cadastro" method="POST">
+            <form action="/cadastro-form" method="POST">
                 <h2>CADASTRO</h2>
 
                 <div class="FormGrid">
@@ -114,6 +114,22 @@
                         </div>
 
                         <div class="InputBox">
+                            <label for="bairro">BAIRRO</label>
+                            <input type="text" id="bairro" name="bairro" placeholder="Bairro" required>
+                        </div>
+
+                        <div class="InputRow">
+                            <div class="InputBox" style="flex: 2;">
+                                <label for="cidade">CIDADE</label>
+                                <input type="text" id="cidade" name="cidade" placeholder="Cidade" required>
+                            </div>
+                            <div class="InputBox" style="flex: 1;">
+                                <label for="uf">UF</label>
+                                <input type="text" id="uf" name="uf" placeholder="SP" maxlength="2" required>
+                            </div>
+                        </div>
+
+                        <div class="InputBox">
                             <label for="tempo">TREINA A QUANTO TEMPO?</label>
                             <input type="text" id="tempo" name="tempo" placeholder="Ex: 6 meses">
                         </div>
@@ -160,4 +176,5 @@
         </div>
     </footer>
     <script src="../assets/js/NavBar.js"></script>
+    <script src="../assets/js/cadastro.js"></script>
 </body>
