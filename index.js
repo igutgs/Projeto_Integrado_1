@@ -4,16 +4,13 @@ const bodyParser = require("body-parser")
 const Usuario = require('./config/Usuario')
 const { ClasseUsuario, ClasseUsuarioLogin } = require('./models/ClasseUsuario');
 
-// Configurações
-    // Body-Parser
         app.use(bodyParser.urlencoded({extended: false}))
         app.use(bodyParser.json())
 
-    // Servir arquivos estáticos
         app.use(express.static('public'))
         app.use(express.static('.'))
 
-// Rotas
+        //rotas para cadastro e login
     app.get('/', function(req, res) {
         res.sendFile(__dirname + '/index.html')
     })
@@ -28,7 +25,6 @@ const { ClasseUsuario, ClasseUsuarioLogin } = require('./models/ClasseUsuario');
 
     app.post('/cadastro-form', async function(req, res) {
         try {
-            // Criar objeto de validação
             let objUsuario = new ClasseUsuario(
                 req.body.nome,
                 req.body.email,
@@ -44,7 +40,7 @@ const { ClasseUsuario, ClasseUsuarioLogin } = require('./models/ClasseUsuario');
                 req.body.confirmarSenha
             )
 
-            // Validações em sequência
+            //validação
             if (!objUsuario.validarNome()) {
                 console.log('Nome inválido')
                 return res.status(400).json({mensagem: 'Nome inválido'})
@@ -95,7 +91,7 @@ const { ClasseUsuario, ClasseUsuarioLogin } = require('./models/ClasseUsuario');
                 return res.status(400).json({mensagem: 'UF inválido'})
             }
 
-            // Se todas as validações passarem, inserir no banco
+            //avançar para banco
             const novoUsuarioData = {
                 nome: objUsuario.nome,
                 email: objUsuario.email,
@@ -153,7 +149,7 @@ const { ClasseUsuario, ClasseUsuarioLogin } = require('./models/ClasseUsuario');
         }
     })
 
-// Criação do servidor
+//sevidor (se tudo der certo, na glória de Deus pai)
     const PORT = process.env.PORT || 3000
     app.listen(PORT, function() {
         console.log(`Servidor rodando na porta ${PORT}`)

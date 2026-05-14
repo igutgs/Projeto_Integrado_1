@@ -1,16 +1,12 @@
 const db = require('../config/db')
 const Usuario = require('../config/Usuario')
 
-// Exemplo de classe
 class ClasseUsuario {
 
-    // Exemplo de encapsulamento
     #senha
     #confirmarSenha
 
-    // Exemplo de construtor
     constructor(nome, email, telefone, rua, numero, complemento, bairro, cidade, uf, data_nascimento, senha, confirmarsenha) {
-        // Exemplos de atributos
         this.nome = nome
         this.email = email
         this.telefone = telefone
@@ -34,16 +30,12 @@ class ClasseUsuario {
         return this.#senha
     }
     
-    // Exemplos de métodos
     validarNome() {
         if (!this.nome || this.nome.trim().length === 0) {
             return false
         }
 
-        const caracteresInvalidos = [
-            '!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/',
-            ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~'
-        ]
+        const caracteresInvalidos = ['!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/',':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~']
 
         for (let i = 0; i < this.nome.length; i++) {
             if (caracteresInvalidos.includes(this.nome[i])) {
@@ -59,7 +51,7 @@ class ClasseUsuario {
             return false
         }
 
-        const emailRegex = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i;
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
         if (!emailRegex.test(this.email)) {
             return false
@@ -79,7 +71,7 @@ class ClasseUsuario {
     }
 
     async validarTelefone() {
-        this.telefone = this.telefone.replace(/[()-]/g, "")
+        this.telefone = this.telefone.replace(/\D/g, "")
 
         if (!this.telefone || this.telefone.trim().length === 0) {
             return false
@@ -189,10 +181,7 @@ class ClasseUsuario {
     }
 
     validarRua(){
-        const caracteresInvalidos = [
-            '!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/',
-            ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~'
-        ]
+        const caracteresInvalidos = ['"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~']
 
         for (let i = 0; i < this.rua.length; i++) {
             if (caracteresInvalidos.includes(this.rua[i])) {
@@ -208,10 +197,7 @@ class ClasseUsuario {
     }
 
     validarNumero(){
-        const caracteresInvalidos = [
-            '!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/',
-            ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~'
-        ]
+        const caracteresInvalidos = ['!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~']
 
         for (let i = 0; i < this.numero.length; i++) {
             if (caracteresInvalidos.includes(this.numero[i])) {
@@ -227,10 +213,7 @@ class ClasseUsuario {
     }
 
     validarBairro(){
-        const caracteresInvalidos = [
-            '!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/',
-            ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~'
-        ]
+        const caracteresInvalidos = ['!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~']
 
         for (let i = 0; i < this.bairro.length; i++) {
             if (caracteresInvalidos.includes(this.bairro[i])) {
@@ -245,10 +228,7 @@ class ClasseUsuario {
     }
 
     validarCidade(){
-        const caracteresInvalidos = [
-            '!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/',
-            ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~'
-        ]
+        const caracteresInvalidos = ['!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~']
 
         for (let i = 0; i < this.cidade.length; i++) {
             if (caracteresInvalidos.includes(this.cidade[i])) {
@@ -264,10 +244,7 @@ class ClasseUsuario {
     }
 
     validarUF(){
-        const caracteresInvalidos = [
-            '!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/',
-            ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~'
-        ]
+        const caracteresInvalidos = ['!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~']
 
         for (let i = 0; i < this.uf.length; i++) {
             if (caracteresInvalidos.includes(this.uf[i])) {
@@ -284,10 +261,8 @@ class ClasseUsuario {
 
 }
 
-// Exemplo de herança
 class ClasseUsuarioLogin extends ClasseUsuario {
 
-    // Exemplo de encapsulamento
     #senha
 
     constructor(email,senha){
@@ -295,7 +270,6 @@ class ClasseUsuarioLogin extends ClasseUsuario {
         this.#senha = senha
     }
 
-    // Exemplo de sobre escrita de métodos e polimorfismo
     async validarEmail(){
         if (!this.email || this.email.trim().length === 0) {
             return false

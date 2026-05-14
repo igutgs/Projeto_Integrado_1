@@ -1,4 +1,4 @@
-// Buscar dados do CEP usando API ViaCEP
+//API para validar cep
 document.getElementById('cep').addEventListener('blur', async function() {
     let cep = this.value.replace(/\D/g, '');
     
@@ -21,7 +21,7 @@ document.getElementById('cep').addEventListener('blur', async function() {
     }
 });
 
-// Validar formulário antes de enviar
+//validação de formulário para envio
 document.querySelector('form').addEventListener('submit', function(e) {
     let bairro = document.getElementById('bairro').value;
     let cidade = document.getElementById('cidade').value;
@@ -33,7 +33,7 @@ document.querySelector('form').addEventListener('submit', function(e) {
     }
 });
 
-// Feedback do formulário
+//feedback (se for legal, se der erro zuo)
 document.querySelector('form').addEventListener('submit', async function(e) {
     e.preventDefault();
     
@@ -53,7 +53,6 @@ document.querySelector('form').addEventListener('submit', async function(e) {
         
         if (response.ok) {
             alert(result.mensagem);
-            // Redirecionar para login
             window.location.href = result.redirect;
         } else {
             alert('Erro: ' + result.mensagem);

@@ -37,7 +37,7 @@ async function testConnection() {
     }
 }
 
-// testar ao carregar
+//teste
 testConnection();
 
 module.exports = {
