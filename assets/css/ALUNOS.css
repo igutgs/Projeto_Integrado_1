@@ -1,0 +1,309 @@
+/* =========================================
+   VARIÁVEIS DE CORES
+   ========================================= */
+   :root {
+    --color-primary: #ff0000;    /* Vermelho vibrante (Destaques) */
+    --color-secondary: #ae0000;  /* Vermelho médio (Hover/Botões) */
+    --color-tertiary: #630000;   /* Vermelho escuro */
+    --color-dark: #220000;       /* Vinho profundo (Seções) */
+    --color-black: #000000;      /* Preto puro (Fundo principal) */
+    --color-white: #ffffff;
+    --color-gray: #bbbbbb;
+}
+
+/* =========================================
+   RESET E BASE
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-white);
+    background-color: var(--color-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* =========================================
+   HEADER (MENU)
+   ========================================= */
+.header {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
+    padding: 30px 0;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.4s ease;
+}
+
+.header.sticky {
+    position: fixed;
+    background: var(--color-black);
+    padding: 15px 0;
+    box-shadow: 0 2px 15px rgba(255, 0, 0, 0.2);
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+   
+}
+
+.LogoImg {
+    height: 70px; 
+    width: auto;  
+    display: block;
+    transition: transform 0.3s ease;
+    margin-left: -20px;
+}
+
+.LogoImg:hover {
+    transform: scale(1.05); 
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    align-items: center;
+}
+
+.menu a {
+    color: var(--color-white);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: var(--color-primary);
+}
+
+.menu a.highlight {
+    border: 2px solid var(--color-primary);
+    padding: 8px 20px;
+    transition: 0.4s;
+}
+
+.menu a.highlight:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+/* =========================================
+   Usuário
+   ========================================= */
+
+.MainContent {
+    padding: 120px 0 50px;
+}
+
+.UserPerfil {
+    margin-bottom: 40px;
+}
+
+.UserInfo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.UserIcon {
+    font-size: 4rem;
+    color: var(--color-white);
+}
+
+.UserText h1 {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.ChangePlan {
+    color: var(--color-white);
+    font-size: 0.8rem;
+    text-decoration: underline;
+}
+
+
+.TreinoCard{
+    background-color: var(--color-white);
+    color: var(--color-white);
+    padding: 30px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+.imcCard {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    padding: 30px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+
+
+.TreinoCard h2, .imcCard h3 {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: var(--color-black);
+}
+
+.DayItem {
+    margin-bottom: 15px;
+
+}
+
+.DayItem label {
+    display: block;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    color: var(--color-black); 
+}
+.EstaticBox {
+    background-color: var(--color-gray);
+    height: 45px;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-top: 5px;
+    border-radius: 2px;
+    color: var(--color-black);
+    transition: 0.3s;
+    border: none; 
+}
+
+
+.EstaticBox:hover, .EstaticBox:focus {
+    outline: 3px solid var(--color-black);
+  
+}
+
+
+.DayItem .EstaticBox, .InputGroup .EstaticBox {
+    width: 100%; 
+   
+}
+
+.imcGrid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+}
+
+.InputGroup {
+    margin-bottom: 15px;
+}
+
+.InputGroup label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-black);
+}
+
+.imcResult {
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start;
+    
+}
+
+.BtnCalc, .BtnAlter {
+    background-color: var(--color-gray);
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 15px; 
+    transition: 0.3s;
+    width: 40%;      
+    text-transform: uppercase;
+}
+
+.BtnCalc,.BtnAlter:hover {
+    outline: 2px solid var(--color-black);
+}
+
+
+.ResultBox {
+    background-color: var(--color-gray);
+    height: 80px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 2px;
+    color: var(--color-black);
+}
+
+/* =========================================
+   FOOTER E ÍCONES
+   ========================================= */
+.footer {
+    background-color: var(--color-black); 
+    padding: 80px 0;
+    border-top: 1px solid var(--color-dark);
+}
+
+.footerGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.footerContatos h3 {
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    color: var(--color-primary);
+}
+
+.contatosIcons {
+    display: flex;
+    gap: 20px;
+}
+
+.contatosIcons a {
+    color: var(--color-white);
+    font-size: 1.8rem;
+    transition: 0.3s ease;
+}
+
+.contatosIcons a:hover {
+    color: var(--color-primary);
+    transform: translateY(-5px);
+}
+
+.footerText p {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: var(--color-gray);
+    text-align: justify;
+}

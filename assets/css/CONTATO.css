@@ -1,0 +1,294 @@
+/* =========================================
+   VARIÁVEIS DE CORES
+   ========================================= */
+   :root {
+    --color-primary: #ff0000;    /* Vermelho vibrante (Destaques) */
+    --color-secondary: #ae0000;  /* Vermelho médio (Hover/Botões) */
+    --color-tertiary: #630000;   /* Vermelho escuro */
+    --color-dark: #220000;       /* Vinho profundo (Seções) */
+    --color-black: #000000;      /* Preto puro (Fundo principal) */
+    --color-white: #ffffff;
+    --color-gray: #bbbbbb;
+}
+
+
+/* =========================================
+   RESET E BASE
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-dark);
+    background-color: var(--color-black);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* =========================================
+   HEADER (MENU)
+   ========================================= */
+.header {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent);
+    padding: 30px 0;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.4s ease;
+}
+
+.header.sticky {
+    position: fixed;
+    background: var(--color-black);
+    padding: 15px 0;
+    box-shadow: 0 2px 15px rgba(255, 0, 0, 0.2);
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 70px;
+    width: auto;
+    display: block;
+    transition: transform 0.3s ease;
+    margin-left: -20px;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    align-items: center;
+}
+
+.menu a {
+    color: var(--color-white);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: var(--color-primary);
+}
+
+.menu a.highlight {
+    border: 2px solid var(--color-primary);
+    padding: 8px 20px;
+    transition: 0.4s;
+}
+
+.menu a.highlight:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+
+/* =========================================
+   SEÇÃO DE CONTATOS (FORMS)
+   ========================================= */
+.ContatosSection {
+    background-color: var(--color-dark);
+    min-height: 100vh;
+    padding: 150px 0 80px;
+}
+
+
+.ContatosGrid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+
+.ColumnLeft h2 {
+    color: var(--color-white);
+    font-size: 2rem;
+    margin-bottom: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 0px;
+}
+
+.CardForm {
+    background: var(--color-white);
+    padding: 40px 30px; 
+    width: 100%;
+    border-radius: 8px; 
+    color: var(--color-black);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+}
+
+.ColumnRight {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.InputBox {
+    margin-bottom: 20px;
+}
+
+.InputBox label {
+    display: block;
+    color: var(--color-black);
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+.InputBox textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-gray);
+    border-radius: 4px;
+    font-size: 1rem;
+    color: var(--color-black);
+    font-family: 'Poppins', sans-serif; 
+    min-height: 120px; 
+    resize: vertical; 
+    outline: none;
+    transition: 0.3s;
+}
+.InputBox input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-gray);
+    font-size: 1rem;
+    color: var(--color-black);
+}
+
+
+.CardPlaylist {
+    background: var(--color-white);
+    padding: 40px 30px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    color: var(--color-black);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-top: 75px;
+}
+
+.CardPlaylist h3 {
+    text-align: center;
+    font-size: 1.3rem;
+    line-height: 1.4;
+    margin-bottom: 40px;
+    color: var(--color-black);
+}
+
+.PlaylistField {
+    margin-bottom: 25px;
+}
+
+.PlaylistField label {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.PlaylistField input {
+    width: 100%;
+    padding: 15px;
+    background: var(--color-white);
+    border: 1px solid var(--color-gray);
+    font-size: 1rem;
+}
+
+
+.btn {
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: 15px;
+    border: none;
+    font-weight: 800;
+    text-transform: uppercase;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 35px;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--color-white);
+    color: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   FOOTER E ÍCONES
+   ========================================= */
+.footer {
+    background-color: var(--color-black);
+    padding: 80px 0;
+    border-top: 1px solid var(--color-dark);
+}
+
+.footerGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.footerContatos h3 {
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    color: var(--color-primary);
+}
+
+.contatosIcons {
+    display: flex;
+    gap: 20px;
+}
+
+.contatosIcons a {
+    color: var(--color-white);
+    font-size: 1.8rem;
+    transition: 0.3s ease;
+}
+
+.contatosIcons a:hover {
+    color: var(--color-primary);
+    transform: translateY(-5px);
+}
+
+.footerText p {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: var(--color-gray);
+    text-align: justify;
+}

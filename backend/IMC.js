@@ -53,6 +53,7 @@ function classificaIMC(imc) {
     }
 }
 
+//teste, dps remover
 let imc = calcularIMC(1.65, 60);
 console.log("IMC: " + imc.toFixed(2));
 console.log("Classificação: " + classificaIMC(imc));
